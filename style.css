@@ -1,17 +1,26 @@
 body {
-  background-color: rgb(54, 211, 159);
+  background: #333
+    url("https://i.postimg.cc/BQcpZKdM/pexels-skitterphoto-71154.jpg") no-repeat
+    center center/cover;
+  height: 140vh;
 }
 .page {
   width: 80%;
   max-width: 960px;
   margin: 50px auto;
   text-align: center;
-  background-color: rgb(54, 211, 159);
   border-radius: 5px;
+
+  /* OverLay */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 body {
-  font: 14px/26px "Bungee", Helvetica, Arial, sans-serif;
-  color: #222;
+  font: 16px/26px "Bungee", Helvetica, Arial, sans-serif;
+  color: #ccc;
   margin: 0px;
   padding: 0px;
   text-transform: uppercase;
