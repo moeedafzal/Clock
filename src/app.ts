@@ -7,9 +7,8 @@ let evening = 18;
 let p_minutes: string;
 let p_seconds: string;
 
-// Getting it to show the current time on the page
+// Showing Current Time
 let showCurrentTime = () => {
-  // display the string on the webpage
   let clock = document.getElementById("clock");
 
   let currentTime = new Date();
@@ -19,7 +18,6 @@ let showCurrentTime = () => {
   let seconds = currentTime.getSeconds();
   let meridian = "AM";
 
-  // Set Hours
   if (hours >= noon) {
     meridian = "PM";
   }
@@ -28,18 +26,16 @@ let showCurrentTime = () => {
     hours = hours - 12;
   }
 
-  // Set Minutes
   p_minutes = minutes.toString();
   if (minutes < 10) {
     p_minutes = "0" + minutes;
   }
 
-  // Set Seconds
   p_seconds = seconds.toString();
   if (seconds < 10) {
     p_seconds = "0" + seconds;
   }
-  // put together the string that displays the time
+
   let clockTime =
     hours + ":" + p_minutes + ":" + p_seconds + " " + meridian + "!";
 
@@ -48,7 +44,7 @@ let showCurrentTime = () => {
   }
 };
 
-// Getting the clock to increment on its own and change out messades and pictures
+// Getting the clock to work
 
 let updateClock = () => {
   let time = new Date().getHours();
@@ -90,7 +86,6 @@ let updateClock = () => {
 };
 updateClock();
 
-// Getting the clock to incremnet
 let oneSecond = 1000;
 setInterval(updateClock, oneSecond);
 
@@ -102,12 +97,16 @@ let partyEvent = () => {
     if (partyButton) {
       partyButton.innerText = "Party Over!";
       partyButton.style.backgroundColor = "rgb(238,24,24)";
+      document.body.style.background =
+        '#333 url("https://i.postimg.cc/3NSS9sPp/party-bg.jpg") no-repeat center center/cover';
     }
   } else {
     partyTime = -1;
     if (partyButton) {
       partyButton.innerText = "Party Time!";
       partyButton.style.backgroundColor = "#222";
+      document.body.style.background =
+        '#333 url("https://i.postimg.cc/BQcpZKdM/pexels-skitterphoto-71154.jpg") no-repeat center center/cover';
     }
   }
 };
@@ -117,7 +116,7 @@ if (partyButton) {
 }
 partyEvent();
 
-// Activate Wake-Up Selector
+// Wake Up
 let wakeUpTimeSelector = document.getElementById(
   "wakeUpTimeSelector"
 ) as HTMLInputElement;
@@ -128,7 +127,7 @@ let wakeUpEvent = () => {
 
 wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
 
-// Activate Lunch Selector
+// Lunch
 let lunchTimeSelector = document.getElementById(
   "lunchTimeSelector"
 ) as HTMLInputElement;
@@ -139,7 +138,7 @@ let lunchTimeEvent = () => {
 
 lunchTimeSelector.addEventListener("change", lunchTimeEvent);
 
-// Activate Nap-Time Selector
+// Nap Time
 let napTimeSelector = document.getElementById(
   "napTimeSelector"
 ) as HTMLInputElement;
